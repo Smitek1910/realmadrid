@@ -13,12 +13,13 @@
     .navbar {
       background-color: #006400;
     }
-    .navbar-brand, .nav-link, .navbar-text {
+    .navbar .navbar-brand,
+    .navbar .nav-link {
       color: #fff !important;
     }
     main {
       min-height: 70vh;
-      padding: 60px 15px;
+      padding: 0;
     }
     footer {
       background-color: #003300;
@@ -30,27 +31,48 @@
       border-radius: 10px;
       margin-bottom: 20px;
     }
+    .header-section {
+      position: relative;
+      background: url('historia.jpg') center/cover no-repeat;
+      height: 300px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    .header-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+    .header-section h1, 
+    .header-section p {
+      position: relative;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Nawigacja -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
         <img src="logoradom.png" alt="Logo RKS Radomiak Radom" width="40" height="40" class="me-2">
         Sklep RKS Radomiak Radom
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#nowosci">Nowości</a></li>
-          <li class="nav-item"><a class="nav-link text-warning fw-bold" href="onas.html">O nas</a></li>
+          <li class="nav-item"><a class="nav-link" href="onas.html">O nas</a></li>
           <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
           <li class="nav-item"><a class="nav-link" href="regulamin.html">Regulamin</a></li>          
         </ul>
@@ -58,39 +80,38 @@
     </div>
   </nav>
 
-  <!-- Główna sekcja -->
-  <main class="container">
-    <h1 class="text-center mb-4 text-success fw-bold">O nas</h1>
-    <p class="lead text-center text-muted mb-5">Poznaj historię i misję RKS Radomiak Radom oraz nasz sklep kibica.</p>
-
-    <div class="bg-white p-4 shadow-sm rounded mb-4">
-      <h2 class="fw-bold text-success mb-3">Nasza historia</h2>
-      <p>Tu możesz opisać historię klubu, jego początki, osiągnięcia oraz ważne wydarzenia. To miejsce na ciekawostki i zdjęcia z przeszłości.</p>
-      <img src="placeholder-history.jpg" alt="Historia klubu" class="section-image">
+  <main class="container-fluid p-0">
+    <div class="header-section text-center">
+      <h1 class="mb-3 fw-bold">O nas</h1>
+      <p class="lead mb-0">Poznaj historię i misję RKS Radomiak Radom oraz nasz sklep kibica.</p>
     </div>
 
-    <div class="bg-white p-4 shadow-sm rounded mb-4">
-      <h2 class="fw-bold text-success mb-3">Misja i wartości</h2>
-      <p>Opisz, co jest dla klubu najważniejsze – wartości, którymi kieruje się drużyna, misję klubu oraz jego zaangażowanie w społeczność.</p>
-      <ul>
-        <li>Wartość 1 – np. pasja do sportu</li>
-        <li>Wartość 2 – np. wspólnota kibiców</li>
-        <li>Wartość 3 – np. promocja Radomia i regionu</li>
-      </ul>
-    </div>
+    <div class="container mt-4">
+      <div class="bg-white p-4 shadow-sm rounded mb-4">
+        <h2 class="fw-bold text-success mb-3">Nasza historia</h2>
+        <p><b>RKS Radomiak Radom – Zieloni z Radomia</b></p>
+        <p>
+          Historia Radomiaka Radom sięga początku XX wieku, kiedy to w 1910 roku powstał klub piłkarski w sercu Radomia. Zielone barwy, które stały się symbolem klubu, odzwierciedlały nadzieję i dynamizm, a także naturalną zieleń okolic Radomia.
+          Po II wojnie światowej klub kontynuował działalność, awansując stopniowo do Ekstraklasy w 2021 roku. Dziś RKS Radomiak Radom to symbol lokalnej tożsamości i pasji do piłki nożnej.
+        </p>
+      </div>
 
-    <div class="bg-white p-4 shadow-sm rounded mb-4">
-      <h2 class="fw-bold text-success mb-3">Nasz sklep</h2>
-      <p>Krótki opis sklepu kibica – co można w nim znaleźć, jakie produkty są dostępne oraz dlaczego warto wspierać klub kupując u nas.</p>
-      <img src="placeholder-shop.jpg" alt="Sklep kibica" class="section-image">
-    </div>
+      <div class="bg-white p-4 shadow-sm rounded mb-4">
+        <h2 class="fw-bold text-success mb-3">Misja i wartości</h2>
+        <p>Misją <b>RKS Radomiak Radom</b> jest rozwijanie sportowej pasji wśród mieszkańców Radomia.</p>
+        <ul>
+          <li><b>Pasja dla sportu</b> – promowanie miłości do piłki nożnej i fair play.</li>
+          <li><b>Wspólnota kibiców</b> – tworzenie niepowtarzalnej atmosfery i wsparcie drużyny.</li>
+          <li><b>Promocja Radomia i regionu</b> – klub jest ambasadorem miasta i regionu, wspierając inicjatywy społeczne.</li>
+        </ul>
+      </div>
 
-    <div class="text-center mt-5">
+      <div class="text-center mt-5">
         <a href="index.html" class="btn btn-success btn-lg">⬅ Powrót do sklepu</a>
+      </div>
     </div>
   </main>
 
-  <!-- Stopka -->
   <footer class="text-center">
     <div class="container">
       <p>📧 kontakt@radomiak.pl | ☎ 123-456-789</p>
