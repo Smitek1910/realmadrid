@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sklep Radomiaka</title>
+    <title>Sklep kibica RKS Radomiak Radom</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="shortcut icon" href="logoradom.png">
+      <body>
       <style>
         body {
           background-color: #f9f9f9;
@@ -16,14 +18,32 @@
           color: #fff !important;
         }
         .hero {
-          background: url('https://images.unsplash.com/photo-1609899531075-64cf58ef56e2?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-          height: 60vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-        }
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+/* 🔽 Obrazek w tle */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('radomiaktlo.png') center/cover no-repeat;
+  filter: brightness(60%);
+  z-index: 0;
+}
+
+/* 🔽 Tekst na wierzchu */
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
         .card img {
           height: 220px;
           object-fit: cover;
@@ -40,70 +60,96 @@
       <!-- Nawigacja -->
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="#">Sklep RKS Radomiak Radom</a>
+          <!-- 🔽 Dodane logo -->
+          <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="logoradom.png" alt="Logo RKS Radomiak Radom" width="40" height="40" class="me-2">
+            Sklep RKS Radomiak Radom
+          </a>
+      
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
+      
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="#">Strona główna</a></li>
-              <li class="nav-item"><a class="nav-link" href="#nowosci">Nowości</a></li>
-              <li class="nav-item"><a class="nav-link" href="#onas">O nas</a></li>
-              <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
-            </ul>
+                <li class="nav-item"><a class="nav-link" href="#">Strona główna</a></li>
+                <li class="nav-item"><a class="nav-link" href="#nowosci">Nowości</a></li>
+                <li class="nav-item"><a class="nav-link" href="#onas">O nas</a></li>
+                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning fw-bold" href="kontakt.html">Kontakt</a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning fw-bold" href="regulamin.html">Regulamin</a>
+                      </li>
+                      
+                      
+                </li>
+              </ul>
+              
           </div>
         </div>
       </nav>
+      
     
       <!-- Sekcja Hero -->
       <section class="hero text-center">
         <div>
-          <h1 class="display-4 fw-bold">Nowa Kolekcja 2025</h1>
+          <h1 class="display-4 fw-bold">Nowa Kolekcja 2025/2026</h1>
           <p class="lead">Z dumą wspieraj Radomiaka!</p>
           <a href="#nowosci" class="btn btn-light btn-lg mt-3">Zobacz produkty</a>
         </div>
       </section>
     
-      <!-- Sekcja Nowości -->
-      <section id="nowosci" class="py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Nowości w sklepie</h2>
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="card shadow-sm">
-                <img src="https://images.unsplash.com/photo-1601382270139-42a9b5d9b47d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Koszulka">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Koszulka meczowa </h5>
-                  <p class="card-text text-muted">359,99 zł</p>
-                  <a href="https://radomiak.sklep.pl/?product=koszulka-meczowa-adidas-ekstraklasa-25-26-zielona" class="btn btn-success" target="_blank" rel="noopener">Wybierz</a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-4">
-              <div class="card shadow-sm">
-                <img src="https://images.unsplash.com/photo-1618354691345-8a9a69e8d9f7?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Bluza">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Bluza z kapturem</h5>
-                  <p class="card-text text-muted">199,99 zł</p>
-                  <a href="https://radomiak.sklep.pl/?product=bluza-z-kapturem-adidas-szara" class="btn btn-success" target="_blank" rel="noopener">Wybierz</a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-md-4">
-              <div class="card shadow-sm">
-                <img src="https://images.unsplash.com/photo-1618354691876-d765a4a2d5e9?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Szalik">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Szalik kibica</h5>
-                  <p class="card-text text-muted">59,99 zł</p>
-                  <a href="https://radomiak.sklep.pl/?product=szalik-zgodowy-radomiak-legia-2" class="btn btn-success" target="_blank" rel="noopener">Wybierz</a>
-                </div>
-              </div>
+     <!-- Sekcja Nowości -->
+<section id="nowosci" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Nowości w sklepie</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <a href="https://radomiak.sklep.pl/?product=koszulka-meczowa-adidas-ekstraklasa-25-26-zielona" target="_blank" rel="noopener">
+              <img src="koszulkameczowa.jpg" class="card-img-top" alt="Koszulka">
+            </a>
+            <div class="card-body text-center">
+              <h5 class="card-title">Koszulka meczowa</h5>
+              <p class="card-text text-muted">359,99 zł</p>
+              <a href="https://radomiak.sklep.pl/?product=koszulka-meczowa-adidas-ekstraklasa-25-26-zielona" class="btn btn-success" target="_blank" rel="noopener">Wybierz</a>
             </div>
           </div>
         </div>
-      </section>
+  
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <a href="https://radomiak.sklep.pl/?product=bluza-z-kapturem-adidas-szara" target="_blank" rel="noopener">
+              <img src="bluza.jpg" class="card-img-top" alt="Bluza">
+            </a>
+            <div class="card-body text-center">
+              <h5 class="card-title">Bluza z kapturem</h5>
+              <p class="card-text text-muted">199,99 zł</p>
+              <a href="https://radomiak.sklep.pl/?product=bluza-z-kapturem-adidas-szara" class="btn btn-success" target="_blank" rel="noopener">Wybierz</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <a href="https://radomiak.sklep.pl/?product=szalik-zgodowy-radomiak-legia-2" target="_blank" rel="noopener">
+              <img src="szalik.jpg" class="card-img-top" alt="Szalik">
+            </a>
+            <div class="card-body text-center">
+              <h5 class="card-title">Szalik kibica</h5>
+              <p class="card-text text-muted">59,99 zł</p>
+              <a href="https://radomiak.sklep.pl/?product=szalik-zgodowy-radomiak-legia-2" class="btn btn-success" target="_blank" rel="noopener">Wybierz</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
     
       <!-- Sekcja O nas -->
       <section id="onas" class="bg-light py-5">
